@@ -1,4 +1,4 @@
-package com.exis.GestionPaie.Organisation.service;
+package com.exis.GestionPaie.service;
 
 
 
@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Optional;
 import org.springframework.stereotype.Service;
 
-import com.exis.GestionPaie.Organisation.repositories.OrganisationRepository;
 import com.exis.GestionPaie.entities.Organisation;
+import com.exis.GestionPaie.repositories.OrganisationRepository;
 
 @Service
 public class OrganisationService {

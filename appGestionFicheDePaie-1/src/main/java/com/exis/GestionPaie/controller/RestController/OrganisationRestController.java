@@ -1,4 +1,4 @@
-package com.exis.GestionPaie.controller.Organisation.RestController;
+package com.exis.GestionPaie.controller.RestController;
 
 import java.util.List;
 
@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.exis.GestionPaie.Organisation.repositories.OrganisationRepository;
 import com.exis.GestionPaie.entities.Organisation;
+import com.exis.GestionPaie.repositories.OrganisationRepository;
 
 @RestController
 public class OrganisationRestController {
@@ -35,9 +35,9 @@ public class OrganisationRestController {
 		//UPDATE
 		@PostMapping("/updateOrganisation")
 		public Organisation updateOrganisation(@RequestBody Organisation organisation) {
-			 Organisation org = organisationDAO.chercheId(organisation.getIdOrganisation()); 
+			 Organisation org = organisationDAO.chercheId(organisation.getPkOrganisationID()); 
 			if (org!=null) {
-				org.setNom_organisation(organisation.getNom_organisation());
+				org.setOrganisationName(organisation.getOrganisationName());
 				organisationDAO.save(org);
 				return org;
 			}else {

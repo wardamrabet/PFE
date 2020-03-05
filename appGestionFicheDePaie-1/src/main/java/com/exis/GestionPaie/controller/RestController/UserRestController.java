@@ -1,4 +1,4 @@
-package com.exis.GestionPaie.controller.Users.RestController;
+package com.exis.GestionPaie.controller.RestController;
 
 import java.util.List;
 
@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.exis.GestionPaie.Organisation.repositories.OrganisationRepository;
 import com.exis.GestionPaie.entities.Organisation;
-import com.exis.GestionPaie.users.repositories.UserRepository;
+import com.exis.GestionPaie.repositories.OrganisationRepository;
+import com.exis.GestionPaie.repositories.UserRepository;
 import com.exis.GestionPaie.users.user.User;
 
 @RestController

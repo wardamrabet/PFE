@@ -1,4 +1,4 @@
-package com.exis.GestionPaie.users.Employer;
+package com.exis.GestionPaie.entities;
 
 import java.io.Serializable;
 import java.util.List;

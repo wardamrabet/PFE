@@ -1,4 +1,4 @@
-package com.exis.GestionPaie.Organisation.controller;
+package com.exis.GestionPaie.controller;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,14 +10,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.exis.GestionPaie.Organisation.repositories.OrganisationRepository;
 import com.exis.GestionPaie.entities.Organisation;
+import com.exis.GestionPaie.repositories.IOrganisationDao;
+
 
 
 @Controller
 public class OrganisationController {
 	@Autowired
-	private OrganisationRepository organisationRepository;
+	private IOrganisationDao organisationRepository;
 	
 	
 	//Ajouter Une organisation
@@ -64,7 +65,7 @@ public class OrganisationController {
 		if (bindingResult.hasErrors()) {
 			return "UpdateOrganisation";
 		}
-		o.setIdOrganisation(num);
+		o.setPkOrganisationID(num);
 		organisationRepository.save(o);
 		return "redirect:/organisation/list";
 	}

@@ -1,4 +1,4 @@
-package com.exis.GestionPaie.users.Controller;
+package com.exis.GestionPaie.controller;
 
 import javax.validation.Valid;
 
@@ -11,13 +11,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.exis.GestionPaie.users.repositories.UserRepository;
-import com.exis.GestionPaie.users.user.User;
+import com.exis.GestionPaie.entities.User;
+import com.exis.GestionPaie.repositories.IUserDao;
 
 @Controller
 public class UserController {
 	@Autowired
-	private UserRepository userRepository;
+	private IUserDao userRepository;
 	
 	
 	//Ajouter Un utilisateur
@@ -64,7 +64,7 @@ public class UserController {
 		if (bindingResult.hasErrors()) {
 			return "UpdateUser";
 		}
-		u.setIdUser(num);
+		u.setId(num);
 		userRepository.save(u);
 		return "redirect:/user/list";
 	}
